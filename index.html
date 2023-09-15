@@ -3,26 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>To-do List</title>
+    <link rel="stylesheet" href="login1.css" />
+    <title>Login1</title>
   </head>
   <body>
-    <div class="container">
-      <div class="todo">
-        <h2>To-Do List <img src="images/icon.png" alt="" /></h2>
-        <div class="row">
-          <input type="text" id="input" placeholder="Add your task" />
-          <button onclick="addTask()">Add</button>
-        </div>
-        <ul id="list">
-          <!-- <li class="checked">Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li> -->
-        </ul>
-      </div>
+    <div class="login">
+      <form class="loginDetails">
+        <img src="profiletwo.jpeg" alt="Pic" /><br /><br />
+        <input
+          type="text"
+          placeholder="Username"
+          class="field"
+          id="usernameLogin"
+        /><br /><br />
+        <input
+          type="password"
+          placeholder="Password"
+          class="field"
+          id="passwordLogin"
+        /><br /><br />
+        <input type="checkbox" /><span>Remember me</span><br /><br />
+        <button type="submit" id="Login">Log In</button><br /><br />
+        <a href="#">Forgot password?</a>
+      </form>
     </div>
 
-    <script src="script.js"></script>
+    <div class="SignUp">
+      <form class="SignupDetails">
+        <h1>SIGN UP</h1>
+        <br /><br /><br />
+        <input
+          type="text"
+          placeholder="Username"
+          class=".fieldsign"
+          id="Username"
+        /><br /><br />
+        <input
+          type="email"
+          placeholder="E-mail"
+          class=".fieldsign"
+          id="email"
+        /><br /><br />
+        <input
+          type="password"
+          placeholder="Password"
+          class=".fieldsign"
+          id="password"
+        />
+        <p id="message">Password is <span id="strength"></span></p>
 
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          class=".fieldsign"
+          id="confirmPassword"
+        /><br /><br />
+        <button type="submit" id="create">CREATE ACCOUNT</button>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
