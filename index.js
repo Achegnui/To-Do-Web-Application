@@ -14,8 +14,10 @@ password.addEventListener("input", function () {
 });
 create.addEventListener("click", function (e) {
   e.preventDefault();
-  fieldCheck();
-  checkSpecialCharacter();
+  if(fieldCheck() && checkSpecialCharacter()){
+    redirect();
+  }
+
 });
 login.addEventListener("click", function (e) {
   e.preventDefault();
@@ -60,14 +62,16 @@ function checkSpecialCharacter() {
   passwordStrength();
   if (strength.innerHTML == "weak") {
     alert("Password is weak");
+    return false;
   }
   const specialCharacters =
     "! @ # $ % ^ & * - + _ ~ = |   / : ; \" ' < > , . ?";
   if (!passValue.match(/[^A-Za-z0-9]/)) {
     // Password does not contain special characters
     alert("Must contain: " + specialCharacters);
+    return false;
   } else {
-    redirect();
+    return true;
   }
 }
 
@@ -84,9 +88,13 @@ function fieldCheck() {
     confirmPasswordValue == ""
   ) {
     alert("Fill all fields");
-  } else if (passwordValue !== confirmPasswordValue) {
+    return false;
+  } 
+  if (passwordValue !== confirmPasswordValue) {
     alert("Your Passwords don't match");
+    return false;
   }
+  return true;
 }
 
 function redirect() {

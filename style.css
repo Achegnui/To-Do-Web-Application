@@ -97,3 +97,9 @@ ul li span{
 ul li span:hover{
     background: #edeef0;
 }
+@media (max-width: 600px) {
+  button{
+    font-size: 13px;
+    padding: 16px 40px;
+  }
+}
